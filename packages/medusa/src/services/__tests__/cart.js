@@ -5,6 +5,7 @@ import CartService from "../cart"
 import { InventoryServiceMock } from "../__mocks__/inventory"
 import { LineItemAdjustmentServiceMock } from "../__mocks__/line-item-adjustment"
 import { FlagRouter } from "../../utils/flag-router"
+import { taxProviderServiceMock } from "../__mocks__/tax-provider"
 
 const eventBusService = {
   emit: jest.fn(),
@@ -57,6 +58,7 @@ describe("CartService", () => {
         manager: MockManager,
         totalsService,
         cartRepository,
+        taxProviderService: taxProviderServiceMock,
         featureFlagRouter: new FlagRouter({}),
       })
       result = await cartService.retrieve(IdMap.getId("emptyCart"))
@@ -90,6 +92,7 @@ describe("CartService", () => {
       totalsService,
       cartRepository,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -179,6 +182,7 @@ describe("CartService", () => {
       customerService,
       regionService,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -352,6 +356,7 @@ describe("CartService", () => {
       inventoryService,
       productVariantService,
       lineItemAdjustmentService: LineItemAdjustmentServiceMock,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -585,6 +590,7 @@ describe("CartService", () => {
       inventoryService,
       productVariantService,
       lineItemAdjustmentService: LineItemAdjustmentServiceMock,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({ sales_channels: true }),
     })
 
@@ -680,6 +686,7 @@ describe("CartService", () => {
       shippingOptionService,
       eventBusService,
       lineItemAdjustmentService: LineItemAdjustmentServiceMock,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -786,6 +793,7 @@ describe("CartService", () => {
       cartRepository,
       totalsService,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -876,6 +884,7 @@ describe("CartService", () => {
       eventBusService,
       inventoryService,
       lineItemAdjustmentService: LineItemAdjustmentServiceMock,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -958,6 +967,7 @@ describe("CartService", () => {
       cartRepository,
       eventBusService,
       customerService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1039,6 +1049,7 @@ describe("CartService", () => {
       cartRepository,
       addressRepository,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1101,6 +1112,7 @@ describe("CartService", () => {
       totalsService,
       cartRepository,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1256,6 +1268,7 @@ describe("CartService", () => {
       eventBusService,
       paymentSessionRepository: MockRepository(),
       priceSelectionStrategy: priceSelectionStrat,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1344,6 +1357,7 @@ describe("CartService", () => {
       totalsService,
       cartRepository,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1464,6 +1478,7 @@ describe("CartService", () => {
       cartRepository,
       paymentProviderService,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -1655,6 +1670,7 @@ describe("CartService", () => {
       lineItemService,
       eventBusService,
       customShippingOptionService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -2010,6 +2026,7 @@ describe("CartService", () => {
       discountService,
       eventBusService,
       lineItemAdjustmentService: LineItemAdjustmentServiceMock,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
@@ -2298,6 +2315,7 @@ describe("CartService", () => {
       totalsService,
       cartRepository,
       eventBusService,
+      taxProviderService: taxProviderServiceMock,
       featureFlagRouter: new FlagRouter({}),
     })
 
