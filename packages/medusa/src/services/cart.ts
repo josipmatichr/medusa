@@ -805,7 +805,7 @@ class CartService extends TransactionBaseService {
           relations.push("items.variant", "items.variant.product")
         }
 
-        const cart = await this.retrieveWithTotals(cartId, {
+        const cart = await this.retrieveNew(cartId, {
           relations,
         })
 
