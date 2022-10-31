@@ -816,9 +816,7 @@ describe("CartService", () => {
       expect(cartRepository.findOneWithRelations).toHaveBeenCalledWith(
         expect.arrayContaining([
           "items",
-          "items.adjustments",
           "shipping_methods",
-          "shipping_methods.tax_lines",
           "shipping_address",
           "billing_address",
           "gift_cards",
@@ -829,10 +827,6 @@ describe("CartService", () => {
           "discounts",
           "discounts.rule",
           "discounts.regions",
-          "items.tax_lines",
-          "region.tax_rates",
-          "items.adjustments",
-          "shipping_methods.tax_lines",
         ]),
         {
           where: { id: "withpays" },
@@ -1009,11 +1003,6 @@ describe("CartService", () => {
             email: "test@testdom.com",
           },
           email: "test@testdom.com",
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
         })
       )
     })
@@ -1035,11 +1024,6 @@ describe("CartService", () => {
           customer_id: IdMap.getId("newCus"),
           customer: { id: IdMap.getId("newCus"), email: "no@mail.com" },
           email: "no@mail.com",
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
         })
       )
     })
@@ -1107,11 +1091,6 @@ describe("CartService", () => {
       expect(cartRepository.save).toHaveBeenCalledWith(
         expect.objectContaining({
           region: { countries: [{ iso_2: "us" }] },
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           billing_address: address,
         })
       )
@@ -1172,11 +1151,6 @@ describe("CartService", () => {
       expect(cartRepository.save).toHaveBeenCalledWith(
         expect.objectContaining({
           region: { countries: [{ iso_2: "us" }] },
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           shipping_address: address,
         })
       )
@@ -1339,11 +1313,6 @@ describe("CartService", () => {
           payment_session: null,
           payment_sessions: [],
           gift_cards: [],
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           discounts: [
             {
               id: IdMap.getId("stays"),
@@ -2084,11 +2053,6 @@ describe("CartService", () => {
         expect.objectContaining({
           id: IdMap.getId("cart"),
           region_id: IdMap.getId("good"),
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           items: [
             {
               id: "li1",
@@ -2139,11 +2103,6 @@ describe("CartService", () => {
         expect.objectContaining({
           id: IdMap.getId("cart"),
           region_id: IdMap.getId("good"),
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           items: [
             {
               id: "li1",
@@ -2224,11 +2183,6 @@ describe("CartService", () => {
               unit_price: 500,
             },
           ],
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           region_id: IdMap.getId("good"),
         })
       )
@@ -2267,11 +2221,6 @@ describe("CartService", () => {
         expect.objectContaining({
           id: "with-d-and-customer",
           region_id: IdMap.getId("good"),
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           discounts: [
             {
               id: "ApplicableForCustomer",
@@ -2304,11 +2253,6 @@ describe("CartService", () => {
         expect.objectContaining({
           id: IdMap.getId("cart"),
           region_id: IdMap.getId("good"),
-          discount_total: 0,
-          shipping_total: 0,
-          subtotal: 0,
-          tax_total: 0,
-          total: 0,
           items: [
             {
               id: "li1",
