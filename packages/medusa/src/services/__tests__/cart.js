@@ -1335,6 +1335,8 @@ describe("CartService", () => {
               },
             ],
           },
+          items: [],
+          shipping_methods: [],
           payment_sessions: [
             {
               id: IdMap.getId("test-session"),
@@ -1391,6 +1393,7 @@ describe("CartService", () => {
     const cart1 = {
       total: 100,
       items: [{ subtotal: 100 }],
+      shipping_methods: [],
       payment_sessions: [],
       region: {
         payment_providers: [{ id: "provider_1" }, { id: "provider_2" }],
@@ -1399,6 +1402,8 @@ describe("CartService", () => {
 
     const cart2 = {
       total: 100,
+      items: [],
+      shipping_methods: [],
       payment_sessions: [{ provider_id: "provider_1" }],
       region: {
         payment_providers: [{ id: "provider_1" }, { id: "provider_2" }],
