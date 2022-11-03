@@ -2,7 +2,7 @@ import { IdMap, MockManager, MockRepository } from "medusa-test-utils"
 import OrderService from "../order"
 import { InventoryServiceMock } from "../__mocks__/inventory"
 import { LineItemServiceMock } from "../__mocks__/line-item"
-import { TotalsNewServiceMock } from "../__mocks__/totals-new"
+import { newTotalsServiceMock } from "../__mocks__/new-totals"
 
 describe("OrderService", () => {
   const totalsService = {
@@ -136,7 +136,7 @@ describe("OrderService", () => {
       paymentProviderService,
       shippingOptionService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       discountService,
       regionService,
       eventBusService,
@@ -457,7 +457,7 @@ describe("OrderService", () => {
       manager: MockManager,
       orderRepository: orderRepo,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
     })
 
     beforeAll(async () => {
@@ -481,7 +481,7 @@ describe("OrderService", () => {
     })
     const orderService = new OrderService({
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       manager: MockManager,
       orderRepository: orderRepo,
     })
@@ -524,7 +524,7 @@ describe("OrderService", () => {
     })
     const orderService = new OrderService({
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       manager: MockManager,
       orderRepository: orderRepo,
       eventBusService,
@@ -636,7 +636,7 @@ describe("OrderService", () => {
 
     const orderService = new OrderService({
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       manager: MockManager,
       orderRepository: orderRepo,
       paymentProviderService,
@@ -737,7 +737,7 @@ describe("OrderService", () => {
       orderRepository: orderRepo,
       paymentProviderService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       eventBusService,
     })
 
@@ -857,7 +857,7 @@ describe("OrderService", () => {
       fulfillmentService,
       lineItemService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       eventBusService,
     })
 
@@ -1093,7 +1093,7 @@ describe("OrderService", () => {
       orderRepository: orderRepo,
       paymentProviderService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       eventBusService,
     })
 
@@ -1236,7 +1236,7 @@ describe("OrderService", () => {
       eventBusService: eventBusService,
       shippingOptionService: optionService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
     })
 
     beforeEach(async () => {
@@ -1392,7 +1392,7 @@ describe("OrderService", () => {
       manager: MockManager,
       orderRepository: orderRepo,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       fulfillmentService,
       lineItemService,
       eventBusService,
@@ -1513,7 +1513,7 @@ describe("OrderService", () => {
       orderRepository: orderRepo,
       paymentProviderService,
       totalsService,
-      totalsNewService: TotalsNewServiceMock,
+      newTotalsService: newTotalsServiceMock,
       eventBusService,
     })
 
