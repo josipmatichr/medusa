@@ -1,6 +1,6 @@
 import { Router } from "express"
 import "reflect-metadata"
-import { Product } from "../../../.."
+import { Product, ProductType } from "../../../.."
 import { PaginatedResponse } from "../../../../types/common"
 import middlewares from "../../../middlewares"
 
@@ -11,6 +11,7 @@ export default (app) => {
 
   route.get("/", middlewares.wrap(require("./list-products").default))
   route.post("/search", middlewares.wrap(require("./search").default))
+  route.get("/types", middlewares.wrap(require("./list-types").default))
   route.get("/:id", middlewares.wrap(require("./get-product").default))
 
   return app
@@ -29,6 +30,7 @@ export const defaultStoreProductsRelations = [
 ]
 
 export * from "./list-products"
+export * from "./list-types"
 export * from "./search"
 
 export type StoreProductsRes = {
@@ -42,4 +44,8 @@ export type StorePostSearchRes = {
 
 export type StoreProductsListRes = PaginatedResponse & {
   products: Product[]
+}
+
+export type StoreProductsListTypesRes = {
+  types: ProductType[]
 }
