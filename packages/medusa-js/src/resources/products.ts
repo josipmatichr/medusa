@@ -3,6 +3,7 @@ import {
   StorePostSearchReq,
   StorePostSearchRes,
   StoreProductsListRes,
+  StoreProductsListTypesRes,
   StoreProductsRes,
 } from "@medusajs/medusa"
 import qs from "qs"
@@ -58,6 +59,18 @@ class ProductsResource extends BaseResource {
       path = `/store/products?${queryString}`
     }
 
+    return this.client.request("GET", path, undefined, {}, customHeaders)
+  }
+
+  /**
+   * @description Retrieves a list of product types
+   * @param customHeaders
+   * @return {ResponsePromise<StoreProductsListTypesRes>}
+   */
+  listTypes(
+    customHeaders: Record<string, any> = {}
+  ): ResponsePromise<StoreProductsListTypesRes> {
+    const path = `/store/products/types`
     return this.client.request("GET", path, undefined, {}, customHeaders)
   }
 }
