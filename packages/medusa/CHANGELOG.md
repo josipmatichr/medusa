@@ -1,5 +1,29 @@
 # Change Log
 
+## 1.16.0
+
+### Minor Changes
+
+- [#4695](https://github.com/medusajs/medusa/pull/4695) [`4d16acf5f`](https://github.com/medusajs/medusa/commit/4d16acf5f096b5656b645f510f9c971e7c2dc9ef) Thanks [@carlos-r-l-rodrigues](https://github.com/carlos-r-l-rodrigues)! - introduce @medusajs/link-modules
+
+### Patch Changes
+
+- [#4913](https://github.com/medusajs/medusa/pull/4913) [`4bf8acbdd`](https://github.com/medusajs/medusa/commit/4bf8acbdd4244aed0425fae4bb1f2f26e79d5640) Thanks [@fPolic](https://github.com/fPolic)! - fix(medusa): csv parser check `match` prop on column
+
+- [#4884](https://github.com/medusajs/medusa/pull/4884) [`046b0dcfa`](https://github.com/medusajs/medusa/commit/046b0dcfa5acfdbf98f5a5593b42673c7567430d) Thanks [@pevey](https://github.com/pevey)! - Chore(medusa-file-s3): Add cache-control option, fix delete function, update to sdk v3
+
+- [#4855](https://github.com/medusajs/medusa/pull/4855) [`4d439bed3`](https://github.com/medusajs/medusa/commit/4d439bed3812e4d4c45bd5c0a872c9b0fd111af8) Thanks [@hanam1ni](https://github.com/hanam1ni)! - fix(medusa): Make event enqueuer reconnect the database when it lost the connection
+
+- [#4834](https://github.com/medusajs/medusa/pull/4834) [`470379e63`](https://github.com/medusajs/medusa/commit/470379e631ca17ee486a28c50ec828344c61d727) Thanks [@StephixOne](https://github.com/StephixOne)! - fix(medusa, admin-ui): Allow soft-deleted return reason restoration
+
+- [#4889](https://github.com/medusajs/medusa/pull/4889) [`a1110b343`](https://github.com/medusajs/medusa/commit/a1110b34383e4626197e572eac05b1a6164cabcb) Thanks [@riqwan](https://github.com/riqwan)! - fix(medusa): category_id and q params for list products endpoint should work
+
+- Updated dependencies [[`460161a69`](https://github.com/medusajs/medusa/commit/460161a69f22cf6d561952e92e7d9b56912113e6), [`fcb6b4f51`](https://github.com/medusajs/medusa/commit/fcb6b4f510dba2757570625acb5da9476b7544fd), [`4d16acf5f`](https://github.com/medusajs/medusa/commit/4d16acf5f096b5656b645f510f9c971e7c2dc9ef), [`4d16acf5f`](https://github.com/medusajs/medusa/commit/4d16acf5f096b5656b645f510f9c971e7c2dc9ef), [`87bade096`](https://github.com/medusajs/medusa/commit/87bade096e3d536f29ddc57dbc4c04e5d7a46e4b), [`4d16acf5f`](https://github.com/medusajs/medusa/commit/4d16acf5f096b5656b645f510f9c971e7c2dc9ef)]:
+  - @medusajs/modules-sdk@1.10.0
+  - @medusajs/utils@1.10.0
+  - @medusajs/orchestration@0.3.0
+  - @medusajs/workflows@0.2.1
+
 ## 1.15.0
 
 ### Minor Changes
